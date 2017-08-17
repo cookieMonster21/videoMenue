@@ -81,7 +81,6 @@ namespace VideoMenu
                     Console.WriteLine(video);
                 }
             }
-            
         }
 
         private static int showMenue(string[] menueItems)
