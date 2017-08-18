@@ -158,6 +158,12 @@ namespace VideoMenu
         {
             Console.WriteLine("Type in a name: ");
             string name = Console.ReadLine();
+
+            while (name.Length < 3)
+            {
+                Console.WriteLine("The name need three or more letters: ");
+                name = Console.ReadLine();
+            }
             Video video = new Video()
             {
                 VideoId = videoID++,
