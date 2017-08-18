@@ -5,8 +5,15 @@ namespace VideoMenu
 {
     class Program
     {
+        //videoID
+        static int videoID = 1;
+
+        //list all videos
+        static List<Video> videos = new List<Video>();
+
         static void Main(string[] args)
         {
+            //menue
             string[] menueItems = {
                 "Search for a video",
                 "Create a video",
@@ -15,9 +22,6 @@ namespace VideoMenu
                 "Delete a video",
                 "Exit"
             };
-
-            //list all videos
-            List<Video> videos = new List<Video>();
 
             int selection = showMenue(menueItems);
 
@@ -117,7 +121,7 @@ namespace VideoMenu
             string name = Console.ReadLine();
             Video video = new Video()
             {
-                VideoId = num,
+                VideoId = videoID++,
                 VideoName = name
             };
             videos.Add(video);
