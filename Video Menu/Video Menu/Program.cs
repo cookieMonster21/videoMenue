@@ -66,8 +66,42 @@ namespace VideoMenu
 
         private static void searchVideo(List<Video> videos)
         {
-            Console.WriteLine("Search function is not working");
+            if (videos.Count == 0)
+            {
+                Console.WriteLine("You have no videos.");
+            } else
+            {
+                Console.Write("Type in the first three letters: ");
+                string search;
+                search = Console.ReadLine();
+
+                while (search.Length != 3)
+                {
+                    Console.Write("You have to type in three letters: ");
+                    search = Console.ReadLine();
+                }
+                bool found = false;
+                int result = 0;
+                for (int i = 0; i < videos.Count; i++)
+                {
+                    string name = videos[i].VideoName.Substring(0, 3);
+                    if (search == name)
+                    {
+                        found = true;
+                        result = i;
+                    }
+                }
+                if (found)
+                {
+                    Console.WriteLine($"Name: {videos[result].VideoName}, ID: {videos[result].VideoId}");
+                }
+                else
+                {
+                    Console.WriteLine($"There is no video with {search}");
+                }
+            }
         }
+           
 
         private static void modifyVideo(List<Video> videos)
         {
