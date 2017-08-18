@@ -6,7 +6,7 @@ namespace VideoMenu
 {
     class Video
     {
-        public int Id { get; set; }
+        public int VideoId { get; set; }
         public string VideoName { get; set; }
     }
 }
