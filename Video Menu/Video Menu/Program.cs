@@ -31,6 +31,7 @@ namespace VideoMenu
                 {
                     //Search for a video
                     Console.WriteLine(menueItems[selection - 1]);
+                    searchVideo(videos);
                 }
                 else if (selection == 2)
                 {
@@ -61,6 +62,11 @@ namespace VideoMenu
 
             Console.WriteLine("Bye Bye");
             Console.ReadLine();
+        }
+
+        private static void searchVideo(List<Video> videos)
+        {
+            Console.WriteLine("Search function is not working");
         }
 
         private static void modifyVideo(List<Video> videos)
@@ -116,7 +122,6 @@ namespace VideoMenu
 
         private static void createVideo(List<Video> videos)
         {
-            int num = videos.Count +1;
             Console.WriteLine("Type in a name: ");
             string name = Console.ReadLine();
             Video video = new Video()
