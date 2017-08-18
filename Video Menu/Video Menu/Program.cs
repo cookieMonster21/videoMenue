@@ -38,7 +38,7 @@ namespace VideoMenu
                 {
                     //Open a video
                     Console.WriteLine(menueItems[selection - 1]);
-                    openVideoList(videos);
+                    openVideo(videos);
                 }
                 else if (selection == 4)
                 {
@@ -71,7 +71,7 @@ namespace VideoMenu
         }
 
 
-        private static void openVideoList(List<Video> videos)
+        private static void openVideo(List<Video> videos)
         {
             Console.WriteLine("Your videos: ");
             if (videos.Count == 0)
@@ -79,10 +79,17 @@ namespace VideoMenu
                 Console.WriteLine("You have no videos.");
             } else
             {
-                foreach (var video in videos)
+                for(int i = 0; i < videos.Count; i++)
                 {
-                    Console.WriteLine(video);
+                    Console.WriteLine($" {i+1} : {videos[i].VideoName}");
                 }
+                Console.Write("Select one video: ");
+                int selection;
+                while (!int.TryParse(Console.ReadLine(), out selection) || selection<1 || selection > videos.Count)
+                {
+                    Console.WriteLine("Choose a number from the list above: ");
+                }
+                Console.WriteLine($" Name: {videos[selection-1].VideoName}, ID: {videos[selection-1].VideoId}");
             }
         }
 
