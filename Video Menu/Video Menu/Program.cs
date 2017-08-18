@@ -44,6 +44,7 @@ namespace VideoMenu
                 {
                     //Modify a video
                     Console.WriteLine(menueItems[selection - 1]);
+                    modifyVideo(videos);
                 }
                 else if (selection == 5)
                 {
@@ -56,6 +57,24 @@ namespace VideoMenu
 
             Console.WriteLine("Bye Bye");
             Console.ReadLine();
+        }
+
+        private static void modifyVideo(List<Video> videos)
+        {
+            if (videos.Count == 0)
+            {
+                Console.WriteLine("You have no videos.");
+            } else
+            {
+                Console.WriteLine("Choose the video you want to modify: ");
+                showVideoList(videos);
+                int selection = CorrectInput(videos);
+                string oldname = videos[selection - 1].VideoName;
+                Console.Write("Type in the new name: ");
+                string newname = Console.ReadLine();
+                videos[selection - 1].VideoName = newname;
+                Console.WriteLine($"You changed {oldname} to {newname}");
+            }
         }
 
         private static void deleteVideo(List<Video> videos)
