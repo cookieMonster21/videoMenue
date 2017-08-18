@@ -49,12 +49,46 @@ namespace VideoMenu
                 {
                     //Delete a video
                     Console.WriteLine(menueItems[selection - 1]);
+                    deleteVideo(videos);
                 }
                 selection = showMenue(menueItems);
             }
 
             Console.WriteLine("Bye Bye");
             Console.ReadLine();
+        }
+
+        private static void deleteVideo(List<Video> videos)
+        {
+            if (videos.Count == 0)
+            {
+                Console.WriteLine("You have no videos.");
+            } else
+            {
+                Console.WriteLine("Choose the video you want remove: ");
+                showVideoList(videos);
+                int selection = CorrectInput(videos);
+                Console.WriteLine($" Your removed: {videos[selection - 1].VideoName}, ID: {videos[selection - 1].VideoId}");
+                videos.RemoveAt(selection - 1);
+            }
+        }
+
+        private static int CorrectInput(List<Video> videos)
+        {
+            int selection;
+            while (!int.TryParse(Console.ReadLine(), out selection) || selection < 1 || selection > videos.Count)
+            {
+                Console.WriteLine("Choose a number from the list above: ");
+            }
+            return selection;
+        }
+
+        private static void showVideoList(List<Video> videos)
+        {
+            for (int i = 0; i < videos.Count; i++)
+            {
+                Console.WriteLine($" {i + 1} : {videos[i].VideoName}");
+            }
         }
 
         private static void createVideo(List<Video> videos)
@@ -79,16 +113,9 @@ namespace VideoMenu
                 Console.WriteLine("You have no videos.");
             } else
             {
-                for(int i = 0; i < videos.Count; i++)
-                {
-                    Console.WriteLine($" {i+1} : {videos[i].VideoName}");
-                }
+                showVideoList(videos);
                 Console.Write("Select one video: ");
-                int selection;
-                while (!int.TryParse(Console.ReadLine(), out selection) || selection<1 || selection > videos.Count)
-                {
-                    Console.WriteLine("Choose a number from the list above: ");
-                }
+                int selection = CorrectInput(videos);
                 Console.WriteLine($" Name: {videos[selection-1].VideoName}, ID: {videos[selection-1].VideoId}");
             }
         }
