@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoMenueUI", "VideoMenueUI\VideoMenueUI.csproj", "{D9E47B26-6FEB-492B-83AB-963436E78195}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoMenueBLL", "VideoMenueBLL\VideoMenueBLL.csproj", "{4FB98126-5B68-406A-BBAA-6FC43015F51D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoMenueDAL", "VideoMenueDAL\VideoMenueDAL.csproj", "{8C8D170C-001D-4C30-A3D1-8416D9CEBD6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoMeueEntity", "VideoMeueEntity\VideoMeueEntity.csproj", "{8267B78C-90A9-4975-8C7B-4CD24D691368}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9E47B26-6FEB-492B-83AB-963436E78195}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9E47B26-6FEB-492B-83AB-963436E78195}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9E47B26-6FEB-492B-83AB-963436E78195}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9E47B26-6FEB-492B-83AB-963436E78195}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FB98126-5B68-406A-BBAA-6FC43015F51D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FB98126-5B68-406A-BBAA-6FC43015F51D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FB98126-5B68-406A-BBAA-6FC43015F51D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FB98126-5B68-406A-BBAA-6FC43015F51D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C8D170C-001D-4C30-A3D1-8416D9CEBD6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C8D170C-001D-4C30-A3D1-8416D9CEBD6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C8D170C-001D-4C30-A3D1-8416D9CEBD6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C8D170C-001D-4C30-A3D1-8416D9CEBD6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8267B78C-90A9-4975-8C7B-4CD24D691368}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8267B78C-90A9-4975-8C7B-4CD24D691368}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8267B78C-90A9-4975-8C7B-4CD24D691368}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8267B78C-90A9-4975-8C7B-4CD24D691368}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,11 @@
+C:\dev\VideoMenue\VideoMenueBLL\bin\Debug\netcoreapp1.1\VideoMenueBLL.deps.json
+C:\dev\VideoMenue\VideoMenueBLL\bin\Debug\netcoreapp1.1\VideoMenueBLL.dll
+C:\dev\VideoMenue\VideoMenueBLL\bin\Debug\netcoreapp1.1\VideoMenueBLL.pdb
+C:\dev\VideoMenue\VideoMenueBLL\bin\Debug\netcoreapp1.1\VideoMenueDAL.dll
+C:\dev\VideoMenue\VideoMenueBLL\bin\Debug\netcoreapp1.1\VideoMeueEntity.dll
+C:\dev\VideoMenue\VideoMenueBLL\bin\Debug\netcoreapp1.1\VideoMenueDAL.pdb
+C:\dev\VideoMenue\VideoMenueBLL\bin\Debug\netcoreapp1.1\VideoMeueEntity.pdb
+C:\dev\VideoMenue\VideoMenueBLL\obj\Debug\netcoreapp1.1\VideoMenueBLL.csprojResolveAssemblyReference.cache
+C:\dev\VideoMenue\VideoMenueBLL\obj\Debug\netcoreapp1.1\VideoMenueBLL.AssemblyInfo.cs
+C:\dev\VideoMenue\VideoMenueBLL\obj\Debug\netcoreapp1.1\VideoMenueBLL.dll
+C:\dev\VideoMenue\VideoMenueBLL\obj\Debug\netcoreapp1.1\VideoMenueBLL.pdb

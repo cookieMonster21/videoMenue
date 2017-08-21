@@ -1,0 +1,50 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v1.1",
+    "signature": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v1.1": {
+      "videomenuebll/1.0.0": {
+        "dependencies": {
+          "VideoMenueDAL": "1.0.0",
+          "VideoMeueEntity": "1.0.0"
+        },
+        "runtime": {
+          "VideoMenueBLL.dll": {}
+        }
+      },
+      "videomenuedal/1.0.0": {
+        "dependencies": {
+          "VideoMeueEntity": "1.0.0"
+        },
+        "runtime": {
+          "VideoMenueDAL.dll": {}
+        }
+      },
+      "videomeueentity/1.0.0": {
+        "runtime": {
+          "VideoMeueEntity.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "videomenuebll/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "videomenuedal/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "videomeueentity/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
