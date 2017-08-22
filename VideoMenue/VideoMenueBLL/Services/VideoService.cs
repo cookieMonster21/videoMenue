@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using VideoMenueDAL;
 using VideoMeueEntity;
@@ -8,7 +7,6 @@ namespace VideoMenueBLL.Services
 {
     class VideoService : IVideoService
     {
-        //use
         public Video Create(Video video)
         {
             Video newVideo;
@@ -19,8 +17,7 @@ namespace VideoMenueBLL.Services
             return newVideo;
         }
 
-        //use..
-        public Video Modify (Video video)
+        public void Modify (Video video)
         {
             int tempId = video.VideoId;
             for (int i = 0; i < ReadAll().Count; i++)
@@ -28,30 +25,51 @@ namespace VideoMenueBLL.Services
                 if (tempId == ReadAll()[i].VideoId)
                 {
                     FakeDB.Videos[i].VideoName = video.VideoName;
-                    int num = i;
                 }
             }
-            return video;
         }
 
-        //use
-        public Video Delete(int Id)
+        public void Delete(int Id)
         {
             Video video = Get(Id);
             FakeDB.Videos.Remove(video);
-            return video;
         }
 
-        //use
         public Video Get(int Id)
         {
             return FakeDB.Videos.FirstOrDefault(x => x.VideoId == Id);
         }
 
-        //use
         public List<Video> ReadAll()
         {
             return new List<Video>(FakeDB.Videos);
+        }
+
+        public bool IdInDatabase(int selection)
+        {
+            bool temp = false;
+            for (int i = 0; i < FakeDB.Videos.Count; i++)
+            {
+                if (FakeDB.Videos[i].VideoId == selection)
+                {
+                    temp = true;
+                }
+            }
+            return temp;
+        }
+
+        public Video Search(string search)
+        {
+            Video tempVideo = null;
+            for (int i = 0; i < ReadAll().Count; i++)
+            {
+                string name = ReadAll()[i].VideoName.Substring(0, 3);
+                if (search == name)
+                {
+                    tempVideo = ReadAll()[i];
+                }
+            }
+            return tempVideo;
         }
     }
 }

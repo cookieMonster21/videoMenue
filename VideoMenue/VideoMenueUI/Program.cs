@@ -15,7 +15,7 @@ namespace VideoMenueUI
             string[] menueItems = {
                 "Search for a video",
                 "Create a video",
-                "Open a video",
+                "Open all videos",
                 "Modify a video",
                 "Delete a video",
                 "Exit"
@@ -33,13 +33,13 @@ namespace VideoMenueUI
                 }
                 else if (selection == 2)
                 {
-                    //Create a video, yes
+                    //Create a video
                     Console.WriteLine(menueItems[selection - 1]);
                     createVideo();
                 }
                 else if (selection == 3)
                 {
-                    //Open a video, yes
+                    //Open a video
                     Console.WriteLine(menueItems[selection - 1]);
                     openVideo();
                 }
@@ -79,20 +79,10 @@ namespace VideoMenueUI
                     Console.Write("You have to type in three letters: ");
                     search = Console.ReadLine();
                 }
-                bool found = false;
-                int result = 0;
-                for (int i = 0; i < bllFacade.VideoService().ReadAll().Count; i++)
+                Video video = bllFacade.VideoService().Search(search);
+                if (video != null)
                 {
-                    string name = bllFacade.VideoService().ReadAll()[i].VideoName.Substring(0, 3);
-                    if (search == name)
-                    {
-                        found = true;
-                        result = i;
-                    }
-                }
-                if (found)
-                {
-                    Console.WriteLine($"Name: {bllFacade.VideoService().ReadAll()[result].VideoName}, ID: {bllFacade.VideoService().ReadAll()[result].VideoId}");
+                    Console.WriteLine($"Name: {video.VideoName}, ID: {video.VideoId}");
                 }
                 else
                 {
@@ -110,10 +100,10 @@ namespace VideoMenueUI
             }
             else
             {
-                Console.WriteLine("Choose the video you want to modify: ");
+                Console.WriteLine("Choose the ID from the video you want to modify: ");
                 showVideoList();
                 int selection = CorrectInput();
-                Video tempVideo = bllFacade.VideoService().ReadAll()[selection - 1];
+                Video tempVideo = bllFacade.VideoService().Get(selection);
                 string oldname = tempVideo.VideoName;
                 Console.Write("Type in the new name: ");
                 string newname = Console.ReadLine();
@@ -131,10 +121,10 @@ namespace VideoMenueUI
             }
             else
             {
-                Console.WriteLine("Choose the video you want remove: ");
+                Console.WriteLine("Choose the ID from the video you want remove: ");
                 showVideoList();
                 int selection = CorrectInput();
-                Console.WriteLine($" You removed: {bllFacade.VideoService().ReadAll()[selection - 1].VideoName}, ID: {bllFacade.VideoService().ReadAll()[selection - 1].VideoId}");
+                Console.WriteLine($" You removed: {bllFacade.VideoService().Get(selection).VideoName}, ID: {bllFacade.VideoService().Get(selection).VideoId}");
                 bllFacade.VideoService().Delete(selection);
             }
         }
@@ -142,9 +132,9 @@ namespace VideoMenueUI
         private static int CorrectInput()
         {
             int selection;
-            while (!int.TryParse(Console.ReadLine(), out selection) || selection < 1 || selection > bllFacade.VideoService().ReadAll().Count)
+            while (!int.TryParse(Console.ReadLine(), out selection) || selection < 1 || !bllFacade.VideoService().IdInDatabase(selection))
             {
-                Console.WriteLine("Choose a number from the list above: ");
+                Console.WriteLine("Choose an ID from the list above: ");
             }
             return selection;
         }
@@ -154,7 +144,7 @@ namespace VideoMenueUI
             List<Video> video = bllFacade.VideoService().ReadAll();
             for (int i = 0; i < video.Count; i++)
             {
-                Console.WriteLine($"ID: {video[i].VideoId}; {video[i].VideoName}");
+                Console.WriteLine($"ID: {video[i].VideoId}; Name: {video[i].VideoName}");
             }
         }
 
@@ -177,17 +167,14 @@ namespace VideoMenueUI
 
         private static void openVideo()
         {
-            Console.WriteLine("Your videos: ");
             if (bllFacade.VideoService().ReadAll().Count == 0)
             {
                 Console.WriteLine("You have no videos.");
             }
             else
             {
+                Console.WriteLine("Your videos: ");
                 showVideoList();
-                Console.Write("Select one video: ");
-                int selection = CorrectInput();
-                Console.WriteLine($" Name: {bllFacade.VideoService().ReadAll()[selection - 1].VideoName}, ID: {bllFacade.VideoService().ReadAll()[selection - 1].VideoId}");
             }
         }
 

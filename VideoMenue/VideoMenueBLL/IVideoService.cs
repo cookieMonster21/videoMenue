@@ -8,7 +8,9 @@ namespace VideoMenueBLL
         Video Create(Video video);
         List<Video> ReadAll();
         Video Get(int Id);
-        Video Delete(int selection);
-        Video Modify(Video video);
+        void Delete(int selection);
+        void Modify(Video video);
+        bool IdInDatabase(int selection);
+        Video Search(string search);
     }
 }
