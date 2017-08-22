@@ -7055,10 +7055,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dev\\VideoMenue\\VideoMenueDAL\\VideoMenueDAL.csproj",
+      "projectUniqueName": "C:\\Users\\ulbri\\OneDrive\\Documents\\GitHub\\videoMenue\\VideoMenue\\VideoMenueDAL\\VideoMenueDAL.csproj",
       "projectName": "VideoMenueDAL",
-      "projectPath": "C:\\dev\\VideoMenue\\VideoMenueDAL\\VideoMenueDAL.csproj",
-      "outputPath": "C:\\dev\\VideoMenue\\VideoMenueDAL\\obj\\",
+      "projectPath": "C:\\Users\\ulbri\\OneDrive\\Documents\\GitHub\\videoMenue\\VideoMenue\\VideoMenueDAL\\VideoMenueDAL.csproj",
+      "outputPath": "C:\\Users\\ulbri\\OneDrive\\Documents\\GitHub\\videoMenue\\VideoMenue\\VideoMenueDAL\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
@@ -7066,8 +7066,8 @@
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {
-            "C:\\dev\\VideoMenue\\VideoMeueEntity\\VideoMeueEntity.csproj": {
-              "projectPath": "C:\\dev\\VideoMenue\\VideoMeueEntity\\VideoMeueEntity.csproj"
+            "C:\\Users\\ulbri\\OneDrive\\Documents\\GitHub\\videoMenue\\VideoMenue\\VideoMeueEntity\\VideoMeueEntity.csproj": {
+              "projectPath": "C:\\Users\\ulbri\\OneDrive\\Documents\\GitHub\\videoMenue\\VideoMenue\\VideoMeueEntity\\VideoMeueEntity.csproj"
             }
           }
         }

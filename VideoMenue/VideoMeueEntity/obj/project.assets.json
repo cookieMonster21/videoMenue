@@ -7042,10 +7042,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dev\\VideoMenue\\VideoMeueEntity\\VideoMeueEntity.csproj",
+      "projectUniqueName": "C:\\Users\\ulbri\\OneDrive\\Documents\\GitHub\\videoMenue\\VideoMenue\\VideoMeueEntity\\VideoMeueEntity.csproj",
       "projectName": "VideoMeueEntity",
-      "projectPath": "C:\\dev\\VideoMenue\\VideoMeueEntity\\VideoMeueEntity.csproj",
-      "outputPath": "C:\\dev\\VideoMenue\\VideoMeueEntity\\obj\\",
+      "projectPath": "C:\\Users\\ulbri\\OneDrive\\Documents\\GitHub\\videoMenue\\VideoMenue\\VideoMeueEntity\\VideoMeueEntity.csproj",
+      "outputPath": "C:\\Users\\ulbri\\OneDrive\\Documents\\GitHub\\videoMenue\\VideoMenue\\VideoMeueEntity\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"

@@ -33,13 +33,13 @@ namespace VideoMenueUI
                 }
                 else if (selection == 2)
                 {
-                    //Create a video
+                    //Create a video, yes
                     Console.WriteLine(menueItems[selection - 1]);
                     createVideo();
                 }
                 else if (selection == 3)
                 {
-                    //Open a video
+                    //Open a video, yes
                     Console.WriteLine(menueItems[selection - 1]);
                     openVideo();
                 }
@@ -64,7 +64,7 @@ namespace VideoMenueUI
 
         private static void searchVideo()
         {
-            if (videos.Count == 0)
+            if (bllFacade.VideoService().ReadAll().Count == 0)
             {
                 Console.WriteLine("You have no videos.");
             }
@@ -81,9 +81,9 @@ namespace VideoMenueUI
                 }
                 bool found = false;
                 int result = 0;
-                for (int i = 0; i < videos.Count; i++)
+                for (int i = 0; i < bllFacade.VideoService().ReadAll().Count; i++)
                 {
-                    string name = videos[i].VideoName.Substring(0, 3);
+                    string name = bllFacade.VideoService().ReadAll()[i].VideoName.Substring(0, 3);
                     if (search == name)
                     {
                         found = true;
@@ -92,7 +92,7 @@ namespace VideoMenueUI
                 }
                 if (found)
                 {
-                    Console.WriteLine($"Name: {videos[result].VideoName}, ID: {videos[result].VideoId}");
+                    Console.WriteLine($"Name: {bllFacade.VideoService().ReadAll()[result].VideoName}, ID: {bllFacade.VideoService().ReadAll()[result].VideoId}");
                 }
                 else
                 {
@@ -104,54 +104,57 @@ namespace VideoMenueUI
 
         private static void modifyVideo()
         {
-            if (videos.Count == 0)
+            if (bllFacade.VideoService().ReadAll().Count == 0)
             {
                 Console.WriteLine("You have no videos.");
             }
             else
             {
                 Console.WriteLine("Choose the video you want to modify: ");
-                showVideoList(videos);
-                int selection = CorrectInput(videos);
-                string oldname = videos[selection - 1].VideoName;
+                showVideoList();
+                int selection = CorrectInput();
+                Video tempVideo = bllFacade.VideoService().ReadAll()[selection - 1];
+                string oldname = tempVideo.VideoName;
                 Console.Write("Type in the new name: ");
                 string newname = Console.ReadLine();
-                videos[selection - 1].VideoName = newname;
+                tempVideo.VideoName = newname;
+                bllFacade.VideoService().Modify(tempVideo);
                 Console.WriteLine($"You changed {oldname} to {newname}");
             }
         }
 
         private static void deleteVideo()
         {
-            if (videos.Count == 0)
+            if (bllFacade.VideoService().ReadAll().Count == 0)
             {
                 Console.WriteLine("You have no videos.");
             }
             else
             {
                 Console.WriteLine("Choose the video you want remove: ");
-                showVideoList(videos);
-                int selection = CorrectInput(videos);
-                Console.WriteLine($" Your removed: {videos[selection - 1].VideoName}, ID: {videos[selection - 1].VideoId}");
-                videos.RemoveAt(selection - 1);
+                showVideoList();
+                int selection = CorrectInput();
+                Console.WriteLine($" You removed: {bllFacade.VideoService().ReadAll()[selection - 1].VideoName}, ID: {bllFacade.VideoService().ReadAll()[selection - 1].VideoId}");
+                bllFacade.VideoService().Delete(selection);
             }
         }
 
-        private static int CorrectInput(List<Video> videos)
+        private static int CorrectInput()
         {
             int selection;
-            while (!int.TryParse(Console.ReadLine(), out selection) || selection < 1 || selection > videos.Count)
+            while (!int.TryParse(Console.ReadLine(), out selection) || selection < 1 || selection > bllFacade.VideoService().ReadAll().Count)
             {
                 Console.WriteLine("Choose a number from the list above: ");
             }
             return selection;
         }
 
-        private static void showVideoList(List<Video> videos)
+        private static void showVideoList()
         {
-            for (int i = 0; i < videos.Count; i++)
+            List<Video> video = bllFacade.VideoService().ReadAll();
+            for (int i = 0; i < video.Count; i++)
             {
-                Console.WriteLine($" {i + 1} : {videos[i].VideoName}");
+                Console.WriteLine($"ID: {video[i].VideoId}; {video[i].VideoName}");
             }
         }
 
@@ -166,26 +169,25 @@ namespace VideoMenueUI
                 name = Console.ReadLine();
             }
 
-            bllFacade.VideoService.Create(new Video()
+            bllFacade.VideoService().Create(new Video()
             {
                 VideoName = name
             });
         }
 
-
         private static void openVideo()
         {
             Console.WriteLine("Your videos: ");
-            if (videos.Count == 0)
+            if (bllFacade.VideoService().ReadAll().Count == 0)
             {
                 Console.WriteLine("You have no videos.");
             }
             else
             {
-                showVideoList(videos);
+                showVideoList();
                 Console.Write("Select one video: ");
-                int selection = CorrectInput(videos);
-                Console.WriteLine($" Name: {videos[selection - 1].VideoName}, ID: {videos[selection - 1].VideoId}");
+                int selection = CorrectInput();
+                Console.WriteLine($" Name: {bllFacade.VideoService().ReadAll()[selection - 1].VideoName}, ID: {bllFacade.VideoService().ReadAll()[selection - 1].VideoId}");
             }
         }
 

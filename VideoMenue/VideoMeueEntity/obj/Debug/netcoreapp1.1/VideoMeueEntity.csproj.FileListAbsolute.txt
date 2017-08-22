@@ -5,3 +5,10 @@ C:\dev\VideoMenue\VideoMeueEntity\obj\Debug\netcoreapp1.1\VideoMeueEntity.csproj
 C:\dev\VideoMenue\VideoMeueEntity\obj\Debug\netcoreapp1.1\VideoMeueEntity.AssemblyInfo.cs
 C:\dev\VideoMenue\VideoMeueEntity\obj\Debug\netcoreapp1.1\VideoMeueEntity.dll
 C:\dev\VideoMenue\VideoMeueEntity\obj\Debug\netcoreapp1.1\VideoMeueEntity.pdb
+C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMeueEntity\bin\Debug\netcoreapp1.1\VideoMeueEntity.deps.json
+C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMeueEntity\bin\Debug\netcoreapp1.1\VideoMeueEntity.dll
+C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMeueEntity\bin\Debug\netcoreapp1.1\VideoMeueEntity.pdb
+C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMeueEntity\obj\Debug\netcoreapp1.1\VideoMeueEntity.csprojResolveAssemblyReference.cache
+C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMeueEntity\obj\Debug\netcoreapp1.1\VideoMeueEntity.AssemblyInfo.cs
+C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMeueEntity\obj\Debug\netcoreapp1.1\VideoMeueEntity.dll
+C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMeueEntity\obj\Debug\netcoreapp1.1\VideoMeueEntity.pdb

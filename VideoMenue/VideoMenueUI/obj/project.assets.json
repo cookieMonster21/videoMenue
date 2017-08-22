@@ -7083,10 +7083,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dev\\VideoMenue\\VideoMenueUI\\VideoMenueUI.csproj",
+      "projectUniqueName": "C:\\Users\\ulbri\\OneDrive\\Documents\\GitHub\\videoMenue\\VideoMenue\\VideoMenueUI\\VideoMenueUI.csproj",
       "projectName": "VideoMenueUI",
-      "projectPath": "C:\\dev\\VideoMenue\\VideoMenueUI\\VideoMenueUI.csproj",
-      "outputPath": "C:\\dev\\VideoMenue\\VideoMenueUI\\obj\\",
+      "projectPath": "C:\\Users\\ulbri\\OneDrive\\Documents\\GitHub\\videoMenue\\VideoMenue\\VideoMenueUI\\VideoMenueUI.csproj",
+      "outputPath": "C:\\Users\\ulbri\\OneDrive\\Documents\\GitHub\\videoMenue\\VideoMenue\\VideoMenueUI\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
@@ -7094,11 +7094,11 @@
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {
-            "C:\\dev\\VideoMenue\\VideoMeueEntity\\VideoMeueEntity.csproj": {
-              "projectPath": "C:\\dev\\VideoMenue\\VideoMeueEntity\\VideoMeueEntity.csproj"
+            "C:\\Users\\ulbri\\OneDrive\\Documents\\GitHub\\videoMenue\\VideoMenue\\VideoMeueEntity\\VideoMeueEntity.csproj": {
+              "projectPath": "C:\\Users\\ulbri\\OneDrive\\Documents\\GitHub\\videoMenue\\VideoMenue\\VideoMeueEntity\\VideoMeueEntity.csproj"
             },
-            "C:\\dev\\VideoMenue\\VideoMenueBLL\\VideoMenueBLL.csproj": {
-              "projectPath": "C:\\dev\\VideoMenue\\VideoMenueBLL\\VideoMenueBLL.csproj"
+            "C:\\Users\\ulbri\\OneDrive\\Documents\\GitHub\\videoMenue\\VideoMenue\\VideoMenueBLL\\VideoMenueBLL.csproj": {
+              "projectPath": "C:\\Users\\ulbri\\OneDrive\\Documents\\GitHub\\videoMenue\\VideoMenue\\VideoMenueBLL\\VideoMenueBLL.csproj"
             }
           }
         }

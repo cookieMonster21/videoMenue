@@ -7,3 +7,12 @@ C:\dev\VideoMenue\VideoMenueDAL\obj\Debug\netcoreapp1.1\VideoMenueDAL.csprojReso
 C:\dev\VideoMenue\VideoMenueDAL\obj\Debug\netcoreapp1.1\VideoMenueDAL.AssemblyInfo.cs
 C:\dev\VideoMenue\VideoMenueDAL\obj\Debug\netcoreapp1.1\VideoMenueDAL.dll
 C:\dev\VideoMenue\VideoMenueDAL\obj\Debug\netcoreapp1.1\VideoMenueDAL.pdb
+C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMenueDAL\bin\Debug\netcoreapp1.1\VideoMenueDAL.deps.json
+C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMenueDAL\bin\Debug\netcoreapp1.1\VideoMenueDAL.dll
+C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMenueDAL\bin\Debug\netcoreapp1.1\VideoMenueDAL.pdb
+C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMenueDAL\bin\Debug\netcoreapp1.1\VideoMeueEntity.dll
+C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMenueDAL\bin\Debug\netcoreapp1.1\VideoMeueEntity.pdb
+C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMenueDAL\obj\Debug\netcoreapp1.1\VideoMenueDAL.csprojResolveAssemblyReference.cache
+C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMenueDAL\obj\Debug\netcoreapp1.1\VideoMenueDAL.AssemblyInfo.cs
+C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMenueDAL\obj\Debug\netcoreapp1.1\VideoMenueDAL.dll
+C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMenueDAL\obj\Debug\netcoreapp1.1\VideoMenueDAL.pdb
