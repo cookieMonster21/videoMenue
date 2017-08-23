@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using VideoMenueDAL;
 using VideoMeueEntity;
 
@@ -7,14 +6,16 @@ namespace VideoMenueBLL.Services
 {
     class VideoService : IVideoService
     {
+        IVideoRepository repro;
+
+        public VideoService(IVideoRepository repro)
+        {
+            this.repro = repro;
+        }
+
         public Video Create(Video video)
         {
-            Video newVideo;
-            FakeDB.Videos.Add(newVideo = new Video(){
-                VideoId = FakeDB.VideoID++,
-                VideoName = video.VideoName
-            });
-            return newVideo;
+            return this.repro.Create(video);
         }
 
         public void Modify (Video video)
@@ -24,52 +25,34 @@ namespace VideoMenueBLL.Services
             {
                 if (tempId == ReadAll()[i].VideoId)
                 {
-                    FakeDB.Videos[i].VideoName = video.VideoName;
+                    ReadAll()[i].VideoName = video.VideoName;
                 }
             }
         }
 
         public void Delete(int Id)
         {
-            Video video = Get(Id);
-            FakeDB.Videos.Remove(video);
+            repro.Delete(Id);
         }
 
         public Video Get(int Id)
         {
-            return FakeDB.Videos.FirstOrDefault(x => x.VideoId == Id);
+            return repro.Get(Id);
         }
 
         public List<Video> ReadAll()
         {
-            return new List<Video>(FakeDB.Videos);
+            return repro.ReadAll();
         }
 
         public bool IdInDatabase(int selection)
         {
-            bool temp = false;
-            for (int i = 0; i < FakeDB.Videos.Count; i++)
-            {
-                if (FakeDB.Videos[i].VideoId == selection)
-                {
-                    temp = true;
-                }
-            }
-            return temp;
+            return repro.IdInDatabase(selection);
         }
 
         public Video Search(string search)
         {
-            Video tempVideo = null;
-            for (int i = 0; i < ReadAll().Count; i++)
-            {
-                string name = ReadAll()[i].VideoName.Substring(0, 3);
-                if (search == name)
-                {
-                    tempVideo = ReadAll()[i];
-                }
-            }
-            return tempVideo;
+            return repro.Search(search);
         }
     }
 }

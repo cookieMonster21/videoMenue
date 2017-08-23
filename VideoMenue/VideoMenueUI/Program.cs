@@ -64,7 +64,7 @@ namespace VideoMenueUI
 
         private static void searchVideo()
         {
-            if (bllFacade.VideoService().ReadAll().Count == 0)
+            if (bllFacade.VideoService.ReadAll().Count == 0)
             {
                 Console.WriteLine("You have no videos.");
             }
@@ -79,7 +79,7 @@ namespace VideoMenueUI
                     Console.Write("You have to type in three letters: ");
                     search = Console.ReadLine();
                 }
-                Video video = bllFacade.VideoService().Search(search);
+                Video video = bllFacade.VideoService.Search(search);
                 if (video != null)
                 {
                     Console.WriteLine($"Name: {video.VideoName}, ID: {video.VideoId}");
@@ -94,7 +94,7 @@ namespace VideoMenueUI
 
         private static void modifyVideo()
         {
-            if (bllFacade.VideoService().ReadAll().Count == 0)
+            if (bllFacade.VideoService.ReadAll().Count == 0)
             {
                 Console.WriteLine("You have no videos.");
             }
@@ -103,19 +103,19 @@ namespace VideoMenueUI
                 Console.WriteLine("Choose the ID from the video you want to modify: ");
                 showVideoList();
                 int selection = CorrectInput();
-                Video tempVideo = bllFacade.VideoService().Get(selection);
+                Video tempVideo = bllFacade.VideoService.Get(selection);
                 string oldname = tempVideo.VideoName;
                 Console.Write("Type in the new name: ");
                 string newname = Console.ReadLine();
                 tempVideo.VideoName = newname;
-                bllFacade.VideoService().Modify(tempVideo);
+                bllFacade.VideoService.Modify(tempVideo);
                 Console.WriteLine($"You changed {oldname} to {newname}");
             }
         }
 
         private static void deleteVideo()
         {
-            if (bllFacade.VideoService().ReadAll().Count == 0)
+            if (bllFacade.VideoService.ReadAll().Count == 0)
             {
                 Console.WriteLine("You have no videos.");
             }
@@ -124,15 +124,15 @@ namespace VideoMenueUI
                 Console.WriteLine("Choose the ID from the video you want remove: ");
                 showVideoList();
                 int selection = CorrectInput();
-                Console.WriteLine($" You removed: {bllFacade.VideoService().Get(selection).VideoName}, ID: {bllFacade.VideoService().Get(selection).VideoId}");
-                bllFacade.VideoService().Delete(selection);
+                Console.WriteLine($" You removed: {bllFacade.VideoService.Get(selection).VideoName}, ID: {bllFacade.VideoService.Get(selection).VideoId}");
+                bllFacade.VideoService.Delete(selection);
             }
         }
 
         private static int CorrectInput()
         {
             int selection;
-            while (!int.TryParse(Console.ReadLine(), out selection) || selection < 1 || !bllFacade.VideoService().IdInDatabase(selection))
+            while (!int.TryParse(Console.ReadLine(), out selection) || selection < 1 || !bllFacade.VideoService.IdInDatabase(selection))
             {
                 Console.WriteLine("Choose an ID from the list above: ");
             }
@@ -141,7 +141,7 @@ namespace VideoMenueUI
 
         private static void showVideoList()
         {
-            List<Video> video = bllFacade.VideoService().ReadAll();
+            List<Video> video = bllFacade.VideoService.ReadAll();
             for (int i = 0; i < video.Count; i++)
             {
                 Console.WriteLine($"ID: {video[i].VideoId}; Name: {video[i].VideoName}");
@@ -159,7 +159,7 @@ namespace VideoMenueUI
                 name = Console.ReadLine();
             }
 
-            bllFacade.VideoService().Create(new Video()
+            bllFacade.VideoService.Create(new Video()
             {
                 VideoName = name
             });
@@ -167,7 +167,7 @@ namespace VideoMenueUI
 
         private static void openVideo()
         {
-            if (bllFacade.VideoService().ReadAll().Count == 0)
+            if (bllFacade.VideoService.ReadAll().Count == 0)
             {
                 Console.WriteLine("You have no videos.");
             }

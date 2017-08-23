@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using VideoMeueEntity;
 
-namespace VideoMenueBLL
+namespace VideoMenueDAL
 {
-    public interface IVideoService
+    public interface IVideoRepository
     {
         //Create
         Video Create(Video video);
@@ -12,9 +12,6 @@ namespace VideoMenueBLL
         List<Video> ReadAll();
         Video Get(int Id);
 
-        //Update, Modify
-        void Modify(Video video);
-
         //Delete
         void Delete(int selection);
 
@@ -22,6 +19,5 @@ namespace VideoMenueBLL
         Video Search(string search);
 
         bool IdInDatabase(int selection);
-        
     }
 }
