@@ -6,7 +6,7 @@ namespace VideoMenueDAL
     {
         public IVideoRepository VideoRepository
         {
-            get { return new VideoRepostioryFakeDB(); }
+            get { return new VideoRepositoryEFMemory(new Context.InMemoryContext()); }
         }
     }
 }
