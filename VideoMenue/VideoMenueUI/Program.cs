@@ -56,15 +56,9 @@ namespace VideoMenueUI
             Console.ReadLine();
         }
 
-        private static bool emptyDatabase()
-        {
-            bool test = bllFacade.VideoService.ReadAll().Count == 0;
-            return test;
-        }
-
         private static void searchVideo()
         {
-            if (emptyDatabase())
+            if (bllFacade.VideoService.emptyDatabase())
             {
                 Console.WriteLine("You have no videos.");
             }
@@ -94,7 +88,7 @@ namespace VideoMenueUI
 
         private static void modifyVideo()
         {
-            if (emptyDatabase())
+            if (bllFacade.VideoService.emptyDatabase())
             {
                 Console.WriteLine("You have no videos.");
             }
@@ -107,6 +101,11 @@ namespace VideoMenueUI
                 string oldname = tempVideo.VideoName;
                 Console.Write("Type in the new name: ");
                 string newname = Console.ReadLine();
+                while (newname.Length < 3)
+                {
+                    Console.WriteLine("The name need three or more letters: ");
+                    newname = Console.ReadLine();
+                }
                 tempVideo.VideoName = newname;
                 bllFacade.VideoService.Modify(tempVideo);
                 Console.WriteLine($"You changed {oldname} to {newname}");
@@ -115,7 +114,7 @@ namespace VideoMenueUI
 
         private static void deleteVideo()
         {
-            if (emptyDatabase())
+            if (bllFacade.VideoService.emptyDatabase())
             {
                 Console.WriteLine("You have no videos.");
             }
@@ -167,7 +166,7 @@ namespace VideoMenueUI
 
         private static void openVideo()
         {
-            if (emptyDatabase())
+            if (bllFacade.VideoService.emptyDatabase())
             {
                 Console.WriteLine("You have no videos.");
             }

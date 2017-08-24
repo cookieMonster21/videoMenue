@@ -73,5 +73,11 @@ namespace VideoMenueBLL.Services
                 return uow.VideoRepository.Search(search);
             }
         }
+
+        public bool emptyDatabase()
+        {
+            bool emptyDB = ReadAll().Count == 0;
+            return emptyDB;
+        }
     }
 }
