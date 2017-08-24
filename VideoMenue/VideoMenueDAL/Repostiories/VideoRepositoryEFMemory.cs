@@ -15,7 +15,7 @@ namespace VideoMenueDAL.Repostiories
 
         public Video Create(Video video)
         {
-            //.Video: add to this table
+            //.Video = add to this table
             this.context.Video.Add(video);
             return video;
         }
