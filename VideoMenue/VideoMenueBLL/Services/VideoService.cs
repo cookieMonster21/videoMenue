@@ -6,53 +6,72 @@ namespace VideoMenueBLL.Services
 {
     class VideoService : IVideoService
     {
-        IVideoRepository repro;
-
-        public VideoService(IVideoRepository repro)
+        DALFacade facade;
+        public VideoService(DALFacade facade)
         {
-            this.repro = repro;
+            this.facade = facade;
         }
 
         public Video Create(Video video)
         {
-            return this.repro.Create(video);
+            using (var uow = facade.UnitOfWork)
+            {
+                var newVideo = uow.VideoRepository.Create(video);
+                uow.Complete();
+                return newVideo;
+            }
         }
 
         public void Modify (Video video)
         {
-            int tempId = video.VideoId;
-            for (int i = 0; i < ReadAll().Count; i++)
+            using (var uow = facade.UnitOfWork)
             {
-                if (tempId == ReadAll()[i].VideoId)
-                {
-                    ReadAll()[i].VideoName = video.VideoName;
-                }
+                var VideoFromDB = uow.VideoRepository.Get(video.VideoId);
+                VideoFromDB.VideoName = video.VideoName;
+                uow.Complete();
             }
         }
 
-        public void Delete(int Id)
+        public Video Delete(int Id)
         {
-            repro.Delete(Id);
+            using (var uow = facade.UnitOfWork)
+            {
+                var newVideo = uow.VideoRepository.Delete(Id);
+                uow.Complete();
+                return newVideo;
+            }
         }
 
         public Video Get(int Id)
         {
-            return repro.Get(Id);
+            using (var uow = facade.UnitOfWork)
+            {
+                return uow.VideoRepository.Get(Id);
+            }
         }
 
         public List<Video> ReadAll()
         {
-            return repro.ReadAll();
+            using (var uow = facade.UnitOfWork)
+            {
+                return uow.VideoRepository.ReadAll();
+            }
         }
 
         public bool IdInDatabase(int selection)
         {
-            return repro.IdInDatabase(selection);
+            using (var uow = facade.UnitOfWork)
+            {
+                return uow.VideoRepository.IdInDatabase(selection);
+            }
         }
 
         public Video Search(string search)
         {
-            return repro.Search(search);
+            using (var uow = facade.UnitOfWork)
+            {
+                return uow.VideoRepository.Search(search);
+            }
         }
     }
 }

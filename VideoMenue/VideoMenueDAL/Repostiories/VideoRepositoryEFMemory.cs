@@ -17,16 +17,14 @@ namespace VideoMenueDAL.Repostiories
         {
             //.Video: add to this table
             this.context.Video.Add(video);
-            //Saving later in UOW!
-            this.context.SaveChanges();
             return video;
         }
 
-        public void Delete(int selection)
+        public Video Delete(int selection)
         {
             Video video = Get(selection);
             this.context.Video.Remove(video);
-            this.context.SaveChanges();
+            return video;
         }
 
         public Video Get(int Id)

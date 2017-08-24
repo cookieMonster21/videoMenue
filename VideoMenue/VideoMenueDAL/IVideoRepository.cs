@@ -13,7 +13,7 @@ namespace VideoMenueDAL
         Video Get(int Id);
 
         //Delete
-        void Delete(int selection);
+        Video Delete(int selection);
 
         //Search
         Video Search(string search);

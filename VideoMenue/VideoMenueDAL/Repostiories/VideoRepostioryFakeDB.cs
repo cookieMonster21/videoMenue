@@ -21,10 +21,11 @@ namespace VideoMenueDAL.Repostiories
             return newVideo;
         }
 
-        public void Delete(int selection)
+        public Video Delete(int selection)
         {
             Video video = Get(selection);
             Videos.Remove(video);
+            return video;
         }
 
         public Video Get(int Id)
