@@ -63,5 +63,10 @@ namespace VideoMenueDAL.Repostiories
             }
             return tempVideo;
         }
+        public bool emptyDB()
+        {
+            bool emptyDB = ReadAll().Count == 0;
+            return emptyDB;
+        }
     }
 }

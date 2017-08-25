@@ -58,7 +58,7 @@ namespace VideoMenueUI
 
         private static void searchVideo()
         {
-            if (bllFacade.VideoService.emptyDatabase())
+            if (bllFacade.VideoService.emptyDB())
             {
                 Console.WriteLine("You have no videos.");
             }
@@ -88,7 +88,7 @@ namespace VideoMenueUI
 
         private static void modifyVideo()
         {
-            if (bllFacade.VideoService.emptyDatabase())
+            if (bllFacade.VideoService.emptyDB())
             {
                 Console.WriteLine("You have no videos.");
             }
@@ -114,7 +114,7 @@ namespace VideoMenueUI
 
         private static void deleteVideo()
         {
-            if (bllFacade.VideoService.emptyDatabase())
+            if (bllFacade.VideoService.emptyDB())
             {
                 Console.WriteLine("You have no videos.");
             }
@@ -166,7 +166,7 @@ namespace VideoMenueUI
 
         private static void openVideo()
         {
-            if (bllFacade.VideoService.emptyDatabase())
+            if (bllFacade.VideoService.emptyDB())
             {
                 Console.WriteLine("You have no videos.");
             }

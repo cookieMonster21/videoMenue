@@ -74,10 +74,12 @@ namespace VideoMenueBLL.Services
             }
         }
 
-        public bool emptyDatabase()
+        public bool emptyDB()
         {
-            bool emptyDB = ReadAll().Count == 0;
-            return emptyDB;
+            using (var uow = facade.UnitOfWork)
+            {
+                return uow.VideoRepository.emptyDB();
+            }
         }
     }
 }

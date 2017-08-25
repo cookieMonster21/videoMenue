@@ -19,5 +19,6 @@ namespace VideoMenueDAL
         Video Search(string search);
 
         bool IdInDatabase(int selection);
+        bool emptyDB();
     }
 }

@@ -22,6 +22,6 @@ namespace VideoMenueBLL
         Video Search(string search);
 
         bool IdInDatabase(int selection);
-        bool emptyDatabase();
+        bool emptyDB();
     }
 }
