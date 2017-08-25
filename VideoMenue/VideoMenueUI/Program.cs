@@ -64,19 +64,15 @@ namespace VideoMenueUI
             }
             else
             {
-                Console.Write("Type in the first three letters: ");
-                string search;
-                search = Console.ReadLine();
-
-                while (search.Length != 3)
+                Console.Write("Type in the name: ");;
+                string search = Console.ReadLine();
+                List<Video> videolist = bllFacade.VideoService.Search(search);
+                if (videolist != null)
                 {
-                    Console.Write("You have to type in three letters: ");
-                    search = Console.ReadLine();
-                }
-                Video video = bllFacade.VideoService.Search(search);
-                if (video != null)
-                {
-                    Console.WriteLine($"Name: {video.VideoName}, ID: {video.VideoId}");
+                    for (int i = 0; i < videolist.Count; i++)
+                    {
+                        Console.WriteLine($"Name: {videolist[i].VideoName}, ID: {videolist[i].VideoId}");
+                    }
                 }
                 else
                 {
@@ -101,11 +97,6 @@ namespace VideoMenueUI
                 string oldname = tempVideo.VideoName;
                 Console.Write("Type in the new name: ");
                 string newname = Console.ReadLine();
-                while (newname.Length < 3)
-                {
-                    Console.WriteLine("The name need three or more letters: ");
-                    newname = Console.ReadLine();
-                }
                 tempVideo.VideoName = newname;
                 bllFacade.VideoService.Modify(tempVideo);
                 Console.WriteLine($"You changed {oldname} to {newname}");

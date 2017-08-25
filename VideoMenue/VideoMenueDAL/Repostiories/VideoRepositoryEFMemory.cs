@@ -50,19 +50,12 @@ namespace VideoMenueDAL.Repostiories
             return this.context.Video.ToList();
         }
 
-        public Video Search(string search)
+        public List<Video> Search(string search)
         {
-            Video tempVideo = null;
-            for (int i = 0; i < ReadAll().Count; i++)
-            {
-                string name = ReadAll()[i].VideoName.Substring(0, 3);
-                if (search == name)
-                {
-                    tempVideo = ReadAll()[i];
-                }
-            }
-            return tempVideo;
+           var test = this.context.Video.Where(x => x.VideoName == search).ToList();
+            return test;
         }
+
         public bool emptyDB()
         {
             bool emptyDB = ReadAll().Count == 0;

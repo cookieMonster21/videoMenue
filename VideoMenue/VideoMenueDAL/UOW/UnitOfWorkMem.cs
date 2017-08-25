@@ -1,5 +1,4 @@
-﻿using System;
-using VideoMenueDAL.Context;
+﻿using VideoMenueDAL.Context;
 using VideoMenueDAL.Repostiories;
 
 namespace VideoMenueDAL.UOW

@@ -19,7 +19,7 @@ namespace VideoMenueBLL
         Video Delete(int selection);
 
         //Search
-        Video Search(string search);
+        List<Video> Search(string search);
 
         bool IdInDatabase(int selection);
         bool emptyDB();

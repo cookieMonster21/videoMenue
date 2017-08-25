@@ -66,7 +66,7 @@ namespace VideoMenueBLL.Services
             }
         }
 
-        public Video Search(string search)
+        public List<Video> Search(string search)
         {
             using (var uow = facade.UnitOfWork)
             {
