@@ -13,7 +13,7 @@ namespace VideoMenueUI
         {
             string[] menueItems = {
                 "Search for a video",
-                "Create a video",
+                "Add videos",
                 "Open all videos",
                 "Modify a video",
                 "Delete a video",
@@ -32,7 +32,7 @@ namespace VideoMenueUI
                 else if (selection == 2)
                 {
                     Console.WriteLine(menueItems[selection - 1]);
-                    createVideo();
+                    AddVideos();
                 }
                 else if (selection == 3)
                 {
@@ -48,12 +48,39 @@ namespace VideoMenueUI
                 {
                     Console.WriteLine(menueItems[selection - 1]);
                     deleteVideo();
-                }
+                } 
                 selection = showMenue(menueItems);
             }
 
             Console.WriteLine("Bye Bye");
             Console.ReadLine();
+        }
+
+        private static void AddVideos()
+        {
+            List<Video> tempVideoList = new List<Video>();
+            string answer = "y";
+            while (answer == "y")
+            {
+                Console.WriteLine("Type in a name: ");
+                string name = Console.ReadLine();
+                Video tempVideo = new Video()
+                {
+                    VideoName = name
+                };
+                tempVideoList.Add(tempVideo);
+                Console.WriteLine("Do you want to create another video? y/n");
+                answer = Console.ReadLine();
+                while (answer != "y" && answer != "n")
+                {
+                    Console.WriteLine("Write y for yes or n for no");
+                    answer = Console.ReadLine();
+                }
+            }
+            if (answer == "n")
+            {
+                bllFacade.VideoService.AddVideos(tempVideoList);
+            }
         }
 
         private static void searchVideo()
@@ -67,7 +94,7 @@ namespace VideoMenueUI
                 Console.Write("Type in the name: ");;
                 string search = Console.ReadLine();
                 List<Video> videolist = bllFacade.VideoService.Search(search);
-                if (videolist != null)
+                if (videolist.Count != 0)
                 {
                     for (int i = 0; i < videolist.Count; i++)
                     {
@@ -138,14 +165,14 @@ namespace VideoMenueUI
             }
         }
 
-        private static void createVideo()
+        /*private static void createVideo()
         {
             Console.WriteLine("Type in a name: ");
             string name = Console.ReadLine();
 
-            while (name.Length < 3)
+            while (name.Length <= 1)
             {
-                Console.WriteLine("The name need three or more letters: ");
+                Console.WriteLine("The name need one or more letters: ");
                 name = Console.ReadLine();
             }
 
@@ -153,7 +180,7 @@ namespace VideoMenueUI
             {
                 VideoName = name
             });
-        }
+        }*/
 
         private static void openVideo()
         {

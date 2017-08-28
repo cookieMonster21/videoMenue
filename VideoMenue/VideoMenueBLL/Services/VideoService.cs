@@ -12,13 +12,15 @@ namespace VideoMenueBLL.Services
             this.facade = facade;
         }
 
-        public Video Create(Video video)
+        public void AddVideos(List<Video> videoList)
         {
             using (var uow = facade.UnitOfWork)
             {
-                var newVideo = uow.VideoRepository.Create(video);
+                for (int i = 0; i < videoList.Count; i++)
+                {
+                    uow.VideoRepository.Create(videoList[i]);
+                }
                 uow.Complete();
-                return newVideo;
             }
         }
 

@@ -6,7 +6,7 @@ namespace VideoMenueBLL
     public interface IVideoService
     {
         //Create
-        Video Create(Video video);
+        void AddVideos(List<Video> video);
 
         //Read
         List<Video> ReadAll();
