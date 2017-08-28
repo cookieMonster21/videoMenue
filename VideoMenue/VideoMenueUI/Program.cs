@@ -13,7 +13,7 @@ namespace VideoMenueUI
         {
             string[] menueItems = {
                 "Search for a video",
-                "Add videos",
+                "Add video(s)",
                 "Open all videos",
                 "Modify a video",
                 "Delete a video",
@@ -164,23 +164,6 @@ namespace VideoMenueUI
                 Console.WriteLine($"ID: {video[i].VideoId}; Name: {video[i].VideoName}");
             }
         }
-
-        /*private static void createVideo()
-        {
-            Console.WriteLine("Type in a name: ");
-            string name = Console.ReadLine();
-
-            while (name.Length <= 1)
-            {
-                Console.WriteLine("The name need one or more letters: ");
-                name = Console.ReadLine();
-            }
-
-            bllFacade.VideoService.Create(new Video()
-            {
-                VideoName = name
-            });
-        }*/
 
         private static void openVideo()
         {
