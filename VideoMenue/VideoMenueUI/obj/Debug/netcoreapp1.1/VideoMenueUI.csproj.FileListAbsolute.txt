@@ -20,9 +20,7 @@ C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMenueUI\bin\
 C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMenueUI\bin\Debug\netcoreapp1.1\VideoMenueUI.pdb
 C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMenueUI\bin\Debug\netcoreapp1.1\VideoMenueBLL.dll
 C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMenueUI\bin\Debug\netcoreapp1.1\VideoMenueDAL.dll
-C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMenueUI\bin\Debug\netcoreapp1.1\VideoMeueEntity.dll
 C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMenueUI\bin\Debug\netcoreapp1.1\VideoMenueBLL.pdb
-C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMenueUI\bin\Debug\netcoreapp1.1\VideoMeueEntity.pdb
 C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMenueUI\bin\Debug\netcoreapp1.1\VideoMenueDAL.pdb
 C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMenueUI\obj\Debug\netcoreapp1.1\VideoMenueUI.csprojResolveAssemblyReference.cache
 C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMenueUI\obj\Debug\netcoreapp1.1\VideoMenueUI.AssemblyInfo.cs

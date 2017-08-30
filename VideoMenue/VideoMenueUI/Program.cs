@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using VideoMenueBLL;
-using VideoMeueEntity;
+using VideoMeueBLL.BusinessObjects;
 
 namespace VideoMenueUI
 {
@@ -58,13 +58,13 @@ namespace VideoMenueUI
 
         private static void AddVideos()
         {
-            List<Video> tempVideoList = new List<Video>();
+            List<VideoBO> tempVideoList = new List<VideoBO>();
             string answer = "y";
             while (answer == "y")
             {
                 Console.WriteLine("Type in a name: ");
                 string name = Console.ReadLine();
-                Video tempVideo = new Video()
+                VideoBO tempVideo = new VideoBO()
                 {
                     VideoName = name
                 };
@@ -93,7 +93,7 @@ namespace VideoMenueUI
             {
                 Console.Write("Type in the name: ");;
                 string search = Console.ReadLine();
-                List<Video> videolist = bllFacade.VideoService.Search(search);
+                List<VideoBO> videolist = bllFacade.VideoService.Search(search);
                 if (videolist.Count != 0)
                 {
                     for (int i = 0; i < videolist.Count; i++)
@@ -120,7 +120,7 @@ namespace VideoMenueUI
                 Console.WriteLine("Choose the ID from the video you want to modify: ");
                 showVideoList();
                 int selection = CorrectInput();
-                Video tempVideo = bllFacade.VideoService.Get(selection);
+                VideoBO tempVideo = bllFacade.VideoService.Get(selection);
                 string oldname = tempVideo.VideoName;
                 Console.Write("Type in the new name: ");
                 string newname = Console.ReadLine();
@@ -158,7 +158,7 @@ namespace VideoMenueUI
 
         private static void showVideoList()
         {
-            List<Video> video = bllFacade.VideoService.ReadAll();
+            List<VideoBO> video = bllFacade.VideoService.ReadAll();
             for (int i = 0; i < video.Count; i++)
             {
                 Console.WriteLine($"ID: {video[i].VideoId}; Name: {video[i].VideoName}");

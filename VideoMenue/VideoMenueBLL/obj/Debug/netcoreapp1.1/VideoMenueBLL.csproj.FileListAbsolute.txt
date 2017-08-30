@@ -13,9 +13,7 @@ C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMenueBLL\bin
 C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMenueBLL\bin\Debug\netcoreapp1.1\VideoMenueBLL.dll
 C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMenueBLL\bin\Debug\netcoreapp1.1\VideoMenueBLL.pdb
 C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMenueBLL\bin\Debug\netcoreapp1.1\VideoMenueDAL.dll
-C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMenueBLL\bin\Debug\netcoreapp1.1\VideoMeueEntity.dll
 C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMenueBLL\bin\Debug\netcoreapp1.1\VideoMenueDAL.pdb
-C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMenueBLL\bin\Debug\netcoreapp1.1\VideoMeueEntity.pdb
 C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMenueBLL\obj\Debug\netcoreapp1.1\VideoMenueBLL.csprojResolveAssemblyReference.cache
 C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMenueBLL\obj\Debug\netcoreapp1.1\VideoMenueBLL.AssemblyInfo.cs
 C:\Users\ulbri\OneDrive\Documents\GitHub\videoMenue\VideoMenue\VideoMenueBLL\obj\Debug\netcoreapp1.1\VideoMenueBLL.dll

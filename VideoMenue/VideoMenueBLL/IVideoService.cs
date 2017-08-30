@@ -1,25 +1,25 @@
 ﻿using System.Collections.Generic;
-using VideoMeueEntity;
+using VideoMeueBLL.BusinessObjects;
 
 namespace VideoMenueBLL
 {
     public interface IVideoService
     {
         //Create
-        void AddVideos(List<Video> video);
+        void AddVideos(List<VideoBO> video);
 
         //Read
-        List<Video> ReadAll();
-        Video Get(int Id);
+        List<VideoBO> ReadAll();
+        VideoBO Get(int Id);
 
         //Update, Modify
-        void Modify(Video video);
+        void Modify(VideoBO video);
 
         //Delete
-        Video Delete(int selection);
+        VideoBO Delete(int selection);
 
         //Search
-        List<Video> Search(string search);
+        List<VideoBO> Search(string search);
 
         bool IdInDatabase(int selection);
         bool emptyDB();

@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using VideoMeueEntity;
+using VideoMeueDAL.Entities;
 
 namespace VideoMenueDAL.Context
 {

@@ -8,8 +8,7 @@
     ".NETCoreApp,Version=v1.1": {
       "videomenuebll/1.0.0": {
         "dependencies": {
-          "VideoMenueDAL": "1.0.0",
-          "VideoMeueEntity": "1.0.0"
+          "VideoMenueDAL": "1.0.0"
         },
         "runtime": {
           "VideoMenueBLL.dll": {}
@@ -114,16 +113,10 @@
       },
       "videomenuedal/1.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.InMemory": "1.1.2",
-          "VideoMeueEntity": "1.0.0"
+          "Microsoft.EntityFrameworkCore.InMemory": "1.1.2"
         },
         "runtime": {
           "VideoMenueDAL.dll": {}
-        }
-      },
-      "videomeueentity/1.0.0": {
-        "runtime": {
-          "VideoMeueEntity.dll": {}
         }
       }
     }
@@ -226,11 +219,6 @@
       "hashPath": "system.runtime.compilerservices.unsafe.4.3.0.nupkg.sha512"
     },
     "videomenuedal/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "videomeueentity/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

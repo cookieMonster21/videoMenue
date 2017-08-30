@@ -2466,14 +2466,6 @@
         "framework": ".NETCoreApp,Version=v1.1",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.InMemory": "1.1.2",
-          "Microsoft.NETCore.App": "1.1.2",
-          "VideoMeueEntity": "1.0.0"
-        }
-      },
-      "VideoMeueEntity/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v1.1",
-        "dependencies": {
           "Microsoft.NETCore.App": "1.1.2"
         }
       }
@@ -7405,18 +7397,12 @@
       "type": "project",
       "path": "../VideoMenueDAL/VideoMenueDAL.csproj",
       "msbuildProject": "../VideoMenueDAL/VideoMenueDAL.csproj"
-    },
-    "VideoMeueEntity/1.0.0": {
-      "type": "project",
-      "path": "../VideoMeueEntity/VideoMeueEntity.csproj",
-      "msbuildProject": "../VideoMeueEntity/VideoMeueEntity.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v1.1": [
       "Microsoft.NETCore.App >= 1.1.2",
-      "VideoMenueDAL >= 1.0.0",
-      "VideoMeueEntity >= 1.0.0"
+      "VideoMenueDAL >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -7436,9 +7422,6 @@
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {
-            "C:\\Users\\ulbri\\OneDrive\\Documents\\GitHub\\videoMenue\\VideoMenue\\VideoMeueEntity\\VideoMeueEntity.csproj": {
-              "projectPath": "C:\\Users\\ulbri\\OneDrive\\Documents\\GitHub\\videoMenue\\VideoMenue\\VideoMeueEntity\\VideoMeueEntity.csproj"
-            },
             "C:\\Users\\ulbri\\OneDrive\\Documents\\GitHub\\videoMenue\\VideoMenue\\VideoMenueDAL\\VideoMenueDAL.csproj": {
               "projectPath": "C:\\Users\\ulbri\\OneDrive\\Documents\\GitHub\\videoMenue\\VideoMenue\\VideoMenueDAL\\VideoMenueDAL.csproj"
             }

@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using VideoMenueDAL;
-using VideoMeueEntity;
+using VideoMeueBLL.BusinessObjects;
+using VideoMeueDAL.Entities;
+using System.Linq;
 
 namespace VideoMenueBLL.Services
 {
@@ -12,20 +14,21 @@ namespace VideoMenueBLL.Services
             this.facade = facade;
         }
 
-        public void AddVideos(List<Video> videoList)
+        public void AddVideos(List<VideoBO> videoList)
         {
             using (var uow = facade.UnitOfWork)
             {
                 for (int i = 0; i < videoList.Count; i++)
                 {
-                    uow.VideoRepository.Create(videoList[i]);
+                    uow.VideoRepository.Create(Convert(videoList[i]));
                 }
                 uow.Complete();
             }
         }
 
-        public void Modify (Video video)
+        public void Modify (VideoBO video)
         {
+            //Convert????
             using (var uow = facade.UnitOfWork)
             {
                 var VideoFromDB = uow.VideoRepository.Get(video.VideoId);
@@ -34,29 +37,29 @@ namespace VideoMenueBLL.Services
             }
         }
 
-        public Video Delete(int Id)
+        public VideoBO Delete(int Id)
         {
             using (var uow = facade.UnitOfWork)
             {
                 var newVideo = uow.VideoRepository.Delete(Id);
                 uow.Complete();
-                return newVideo;
+                return Convert(newVideo);
             }
         }
 
-        public Video Get(int Id)
+        public VideoBO Get(int Id)
         {
             using (var uow = facade.UnitOfWork)
             {
-                return uow.VideoRepository.Get(Id);
+                return Convert(uow.VideoRepository.Get(Id));
             }
         }
 
-        public List<Video> ReadAll()
+        public List<VideoBO> ReadAll()
         {
             using (var uow = facade.UnitOfWork)
             {
-                return uow.VideoRepository.ReadAll();
+                return uow.VideoRepository.ReadAll().Select(Convert).ToList();
             }
         }
 
@@ -68,11 +71,12 @@ namespace VideoMenueBLL.Services
             }
         }
 
-        public List<Video> Search(string search)
+        public List<VideoBO> Search(string search)
         {
             using (var uow = facade.UnitOfWork)
             {
-                return uow.VideoRepository.Search(search);
+                //return uow.VideoRepository.Search(search).Select(c => Convert(c)).ToList();
+                return uow.VideoRepository.Search(search).Select(Convert).ToList();
             }
         }
 
@@ -82,6 +86,24 @@ namespace VideoMenueBLL.Services
             {
                 return uow.VideoRepository.emptyDB();
             }
+        }
+
+        private Video Convert(VideoBO video)
+        {
+            return new Video()
+            {
+                VideoId = video.VideoId,
+                VideoName = video.VideoName
+            };
+        }
+
+        private VideoBO Convert(Video video)
+        {
+            return new VideoBO()
+            {
+                VideoId = video.VideoId,
+                VideoName = video.VideoName
+            };
         }
     }
 }

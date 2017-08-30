@@ -1,4 +1,4 @@
-﻿namespace VideoMeueEntity
+﻿namespace VideoMeueDAL.Entities
 {
     public class Video
     {

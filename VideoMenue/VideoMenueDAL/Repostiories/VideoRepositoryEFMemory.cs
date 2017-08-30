@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using VideoMenueDAL.Context;
-using VideoMeueEntity;
+using VideoMeueDAL.Entities;
 
 namespace VideoMenueDAL.Repostiories
 {
